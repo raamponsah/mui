@@ -1,15 +1,21 @@
-import { Button } from "@mui/material";
-import DeleteIcon from '@mui/icons-material/Delete';
-import { PersonPinCircle, Send } from "@mui/icons-material";
+
+import { Sidebar } from "./components/Sidebar";
+import { RightBar } from "./components/RightBar";
+import { Feed } from "./components/Feed";
+import { Box, Stack } from "@mui/material";
+import { Navbar } from "./components/Navbar";
 
 
 function App() {
   return (
-    <div className="App">
-      <h1>React App</h1>
-      <Button variant="outlined"  size="large" color="primary" startIcon={<DeleteIcon/>} endIcon={<PersonPinCircle/>}>Press ME</Button>
-      <Button variant="contained" color="success" size="larger" endIcon={<Send/>}>Send</Button>
-    </div>
+    <Box className="App">
+      <Navbar/>
+    <Stack direction="row" spacing={2} justifyContent="space-between">
+        <Sidebar/>
+        <Feed/>
+        <RightBar/>
+        </Stack>
+    </Box>
   );
 }
 
